@@ -21,12 +21,6 @@ PawPal+ is a pet care planner that helps organize daily tasks for a pet. It lets
 - Automatically recreate recurring tasks when completed
 
 ## Running the App
-
-Run the Streamlit app:
-
-```bash
-streamlit run app.py
-
 ## Screenshots
 
 ### Adding Tasks
@@ -37,3 +31,11 @@ streamlit run app.py
 
 ### Generated Schedule
 ![Schedule](./Screenshot%202026-03-31%20025536.png)
+
+
+
+Run the Streamlit app:
+
+```bash
+streamlit run app.py
+
