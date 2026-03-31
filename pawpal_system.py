@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from datetime import date, timedelta
 
 
 @dataclass
@@ -9,6 +10,7 @@ class Task:
     time: str
     frequency: str = "once"
     completed: bool = False
+    due_date: date = field(default_factory=date.today)
 
     def mark_complete(self):
         """Mark this task as completed."""
@@ -83,3 +85,29 @@ class Scheduler:
                 seen_times[task.time] = task.title
 
         return conflicts
+
+    def mark_task_complete(self, pet, task):
+        """Mark a task complete and recreate it if it is recurring."""
+        task.mark_complete()
+
+        if task.frequency == "daily":
+            new_task = Task(
+                title=task.title,
+                duration_minutes=task.duration_minutes,
+                priority=task.priority,
+                time=task.time,
+                frequency=task.frequency,
+                due_date=task.due_date + timedelta(days=1)
+            )
+            pet.add_task(new_task)
+
+        elif task.frequency == "weekly":
+            new_task = Task(
+                title=task.title,
+                duration_minutes=task.duration_minutes,
+                priority=task.priority,
+                time=task.time,
+                frequency=task.frequency,
+                due_date=task.due_date + timedelta(days=7)
+            )
+            pet.add_task(new_task)
