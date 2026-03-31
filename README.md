@@ -26,3 +26,14 @@ Run the Streamlit app:
 
 ```bash
 streamlit run app.py
+
+## Screenshots
+
+### Adding Tasks
+![Adding Tasks](./Screenshot%202026-03-31%20025514.png)
+
+### Marking Tasks Complete and Filtering
+![Marking Tasks](./Screenshot%202026-03-31%20025521.png)
+
+### Generated Schedule
+![Schedule](./Screenshot%202026-03-31%20025536.png)
