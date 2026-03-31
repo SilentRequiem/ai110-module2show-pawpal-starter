@@ -1,4 +1,4 @@
-from pawpal_models import Owner, Pet, Task, Scheduler
+from pawpal_system import Owner, Pet, Task, Scheduler
 
 
 owner = Owner("Michael")
