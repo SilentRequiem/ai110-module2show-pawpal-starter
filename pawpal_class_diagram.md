@@ -1,0 +1,39 @@
+# PawPal+ Class Diagram
+
+```mermaid
+classDiagram
+    class Owner {
+        +name: str
+        +pets: list[Pet]
+        +add_pet(pet: Pet) void
+        +get_all_tasks() list[Task]
+    }
+
+    class Pet {
+        +name: str
+        +species: str
+        +tasks: list[Task]
+        +add_task(task: Task) void
+        +get_tasks() list[Task]
+    }
+
+    class Task {
+        +title: str
+        +duration_minutes: int
+        +priority: str
+        +scheduled_time: str
+        +set_scheduled_time(time: str) void
+    }
+
+    class Scheduler {
+        +owner: Owner
+        +sort_by_time(tasks: list[Task]) list[Task]
+        +sort_by_priority(tasks: list[Task]) list[Task]
+        +build_daily_schedule() list[Task]
+    }
+
+    Owner "1" o-- "0..*" Pet : has
+    Pet "1" o-- "0..*" Task : has
+    Scheduler --> Owner : uses
+    Scheduler --> Task : orders
+```
