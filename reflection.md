@@ -21,13 +21,11 @@ Right now, I've kept the design simple and haven't made any major changes. I mig
 
 **a. Constraints and priorities**
 
-- What constraints does your scheduler consider (for example: time, priority, preferences)?
-- How did you decide which constraints mattered most?
+My scheduler considers time, completion status, and task frequency. Time is used to sort tasks so they are in the correct order. Completion status is used for filtering tasks so the user can view completed or incomplete tasks. Frequency is used to handle recurring tasks like daily or weekly tasks. I decided these constraints mattered most because they directly affect how a user plans their day and keeps track of important tasks.
 
 **b. Tradeoffs**
 
-- Describe one tradeoff your scheduler makes.
-- Why is that tradeoff reasonable for this scenario?
+One tradeoff my scheduler makes is that it only checks for exact time conflicts instead of overlapping durations. This means two tasks with different durations but overlapping times will not be detected as a conflict. This tradeoff is reasonable because it keeps the logic simple and still solves the main problem for this project.
 
 ---
 
@@ -35,13 +33,11 @@ Right now, I've kept the design simple and haven't made any major changes. I mig
 
 **a. How you used AI**
 
-- How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
-- What kinds of prompts or questions were most helpful?
+I used AI to help design my system, generate class skeletons, and debug issues. I also used it to help connect my backend logic to the Streamlit UI and to create test cases. The most helpful prompts were ones where I clearly described what I wanted, like generating a class structure or fixing a specific error.
 
 **b. Judgment and verification**
 
-- Describe one moment where you did not accept an AI suggestion as-is.
-- How did you evaluate or verify what the AI suggested?
+There were times where I did not accept AI suggestions directly. For example, when adding new features, I made sure the logic matched my design and did not overcomplicate the system. I verified suggestions by running my code, checking outputs, and using tests to make sure everything worked correctly.
 
 ---
 
@@ -49,13 +45,11 @@ Right now, I've kept the design simple and haven't made any major changes. I mig
 
 **a. What you tested**
 
-- What behaviors did you test?
-- Why were these tests important?
+I tested adding tasks, marking tasks complete, sorting tasks by time, detecting conflicts, filtering tasks, and recurring task creation. These tests were important because they verify the main features of the scheduler and ensure the system behaves as expected.
 
 **b. Confidence**
 
-- How confident are you that your scheduler works correctly?
-- What edge cases would you test next if you had more time?
+I am confident that my scheduler works correctly because all of my tests passed. The main features like sorting, filtering, and recurrence are working. If I had more time, I would test edge cases such as duplicate task names, invalid time inputs, and more complex scheduling scenarios.
 
 ---
 
@@ -63,12 +57,12 @@ Right now, I've kept the design simple and haven't made any major changes. I mig
 
 **a. What went well**
 
-- What part of this project are you most satisfied with?
+The part that went well was building the system step by step. Starting with the design and then implementing each part made the project easier to manage. The connection between the backend and the UI also worked well.
 
 **b. What you would improve**
 
-- If you had another iteration, what would you improve or redesign?
+If I had another iteration, I would improve the UI and make it more user friendly. I would also improve the conflict detection to handle overlapping time ranges instead of just exact matches.
 
 **c. Key takeaway**
 
-- What is one important thing you learned about designing systems or working with AI on this project?
+One important thing I learned is that designing the system first makes coding much easier. Working with AI was helpful, but I still needed to understand the logic and make sure everything worked correctly.
